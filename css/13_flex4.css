@@ -1,0 +1,119 @@
+* {
+  box-sizing: border-box; /* content+ padding + border = width / height */
+  margin: 0;
+  padding: 0;
+}
+div { border: 1px solid black; }
+/* 상하 2분할 */
+.container-1 {
+  width: 500px;
+  height: 600px;
+  margin: 20px; /* 옆으로 띄우기 */
+}
+.container-1 > div {
+  width: 100%; /* 부모 너비와 동일 */
+  height: 50%; /* 부모 너비의 절반 */
+}
+.container-1 > div:first-child {
+  background-color: rgb(124, 119, 119);
+}
+.container-1 > div:last-child {
+  background-color: rgb(208, 208, 253);
+}
+
+/*  ******************************************************************************************* */
+/* 세로 3분할 */
+.container-2 {
+  width: 300px;
+  height: 432px;
+  margin: 20px;
+}
+.container-2 > div {
+  width : 100%;
+}
+.container-2 > div:first-child {
+  height: 50%;
+  background-color: rgb(236, 196, 196);
+}
+.container-2 > div:nth-child(2) {
+  height: 30%;
+  background-color: rgb(153, 153, 194);
+}
+.container-2 > div:last-child {
+  height: 20%;
+  background-color: rgb(109, 145, 109);
+}
+
+/*  ******************************************************************************************* */
+
+/* 가로 5 : 5 분할 */
+.container-3 {
+  display: flex; /* 내부 요소를 유연하게 배치 */
+  flex-direction: row;
+  width: 300px;
+  height: 100px;
+}
+.container-3 > div {
+  width: 50%;
+  height: 100%;
+}
+.red { background-color: red; }
+.yellow { background-color: yellow; }
+
+/*  ******************************************************************************************* */
+
+/* 가로 5분할 */
+.container-4 {
+  display: flex;
+  flex-direction: row; /* flex container 교차축 정렬 기본값 : stretch
+                          -> 세로 방향으로 item이 쭉 당겨짐 == height : 100% */
+  align-items: stretch;
+  width : 600px;
+  height: 100px;
+  margin: 20px;
+}
+/* 2, 4번 너비 35% */
+.container-4 > div:nth-child(2n) {
+  width: 35%;
+}
+/* 1, 3, 5번 너비 10% */
+.container-4 > div:nth-child(2n-1) {
+  width: 10%;
+}
+
+/*  ******************************************************************************************* */
+
+
+/* 방법 1 : 행 / 열 먼저 나눈 후 내부 2분할 */
+.container-5 {
+  width: 300px;
+  height: 300px;
+  margin: 20px;
+} 
+/* 부모 높이 50% 짜리 행 */
+ .row-50 {
+  display: flex;
+  height: 50%;
+  width: 100%;
+}
+.col-50 {
+  width: 50%;
+  height: 100%;
+} 
+
+/*  ******************************************************************************************* */
+/* .container-5 {
+  display: flex;
+  flex-direction: row;
+  width: 300px;
+  height: 300px;
+  margin : 20px;
+}
+.row-50 {
+  width: 50%;
+}
+.col-50 {
+  height: 50%;
+} */
+
+ 

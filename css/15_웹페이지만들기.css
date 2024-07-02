@@ -1,0 +1,85 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+div,header, main, footer, section { border: 1px solid black;}
+/* body 태그에 flex 설정 == 화면을 나누는 큰 영역을 유연하게 배치 */
+body { 
+  display: flex; 
+  flex-direction: column;
+  /* 최소 높이 : 화면 높이 100% */
+  min-height: 100vh;
+}
+/* 헤더 부분 */
+header {
+  height: 100px;
+  display: flex;
+}
+
+/* 교차축(세로) 방향 align-items : stretch; (기본값)
+   설정되어 있기 때문에 height : 100%; 작성 안해도 된다
+*/
+.header-1 { 
+  flex-grow: 1;
+  text-align: center;
+  font-size: 30px;
+  background-color: lightblue;
+}
+.container-1 {
+  display: flex;
+  flex-direction: row;
+  width: 600px;
+  height: 500px;
+}
+/* 메인 부분 */
+main {
+  background-color: white;
+  /* 팽창 (기본 값 : 0) */
+  /* 나머지 item이 0, main 혼자 -> 혼자 늘어나서 남은 화면 다 채움 */
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+.content-1 { height: 600px; }
+.content-2 { height: 700px; }
+.content-3 { height: 600px; }
+/* 푸터 부분 */
+footer {
+  height: 100px;
+}
+
+.fixed-container {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: white;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+}
+.fixed-container > a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  line-height: 38px; 
+  user-select: none;
+  border-radius: 50%;
+}
+html {
+  scroll-behavior: smooth;
+}
+footer > section { height: 100%; }
+.sticky {
+  background-color: aqua;
+  color: white;
+  padding: 10px;
+  position: sticky;
+  /* 화면을 벗어나면 어디에 붙을지 위치를 지정해야 한다. */
+  top : -70px;
+  z-index: 70;
+}
